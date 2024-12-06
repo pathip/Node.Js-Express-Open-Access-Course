@@ -6,6 +6,8 @@ import morgan from 'morgan';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+const productRounter = express.Router();
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,7 +21,11 @@ app.use(express.static(path.join(__dirname, "/public/")));
 app.set("views","./src/views");
 app.set("view engine", "ejs")
 
-app.get("/products")
+productRounter.route("/").get((req,res) => {
+    res.send("Hello World !! I'm Product");
+});
+
+app.use("/products", productRounter)
 
 app.get("/", (req, res) => {
 
