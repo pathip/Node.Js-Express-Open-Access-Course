@@ -22,7 +22,7 @@ app.set("views","./src/views");
 app.set("view engine", "ejs")
 
 productRounter.route("/").get((req,res) => {
-    res.send("Hello World !! I'm Product");
+    res.render("product");
 });
 
 app.use("/products", productRounter)
