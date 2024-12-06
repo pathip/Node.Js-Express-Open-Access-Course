@@ -6,7 +6,7 @@ import morgan from 'morgan';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-const productRounter = express.Router();
+import productRounter from './src/router/productsRounter.mjs';
 
 
 const __filename = fileURLToPath(import.meta.url);
