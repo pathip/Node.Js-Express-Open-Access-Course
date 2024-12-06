@@ -21,8 +21,9 @@ app.use(express.static(path.join(__dirname, "/public/")));
 app.set("views","./src/views");
 app.set("view engine", "ejs")
 
-productRounter.route("/").get((req,res) => {
-    res.render("product", 
+productRounter.route("/:id").get((req,res) => {
+    const it = req.params.id;
+    res.render("product" + id, 
         products,
     );
 });
